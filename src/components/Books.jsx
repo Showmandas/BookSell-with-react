@@ -1,8 +1,13 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigation } from 'react-router-dom';
 import BookCard from './BookCard';
 
 const Books = () => {
+        // load spinner 
+        const navigation=useNavigation()
+        if(navigation.state === 'loading'){
+            return <Spinner/>
+        }
     const {books}=useLoaderData();
     console.log(books);
     return (
