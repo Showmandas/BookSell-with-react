@@ -1,11 +1,16 @@
 import { useState } from 'react'
+import { Outlet } from 'react-router-dom'
+import Header from './components/Header'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div>
-     <h2 className='text-5xl text-fuchsia-500'>Style with tailwind</h2>
+     {/* header  */}
+     <Header/>
+     <Outlet/>
+     {/* footer  */}
     </div>
   )
 }
